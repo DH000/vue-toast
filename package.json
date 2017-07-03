@@ -2,14 +2,14 @@
   "name": "vue-toast",
   "version": "2.0",
   "description": "A mobile toast plugin for vue.",
-  "keywords":["vue.js","vue-plugin","toast"],
+  "keywords":["vue-toast","vue-plugin","vue-mobile-toast"],
   "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "repository": {
   	"type": "git",
-  	"url": ""
+  	"url": "https://github.com/JackySoft/vue-toast.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
