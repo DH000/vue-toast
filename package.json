@@ -1,5 +1,5 @@
 {
-  "name": "@jackbean/vue-toast",
+  "name": "vue-toast-m",
   "version": "2.0.0",
   "description": "A mobile toast plugin for vue.",
   "keywords":["vue-toast","vue-plugin","vue-mobile-toast"],
