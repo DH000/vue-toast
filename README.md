@@ -14,7 +14,7 @@ It's simple.
 
 //first import plugin
 
-import VueToast    from './plugins/vue-toast/lib/index'
+import VueToast    from 'vue-toast-m'
 
 //and register the plugin on vue.
 
@@ -28,6 +28,12 @@ or
 
 this.$toast.show("hello,toast",{
   duration:3000
+})
+
+or
+
+this.$toast.show("hello,toast",function(){
+    //to-do 
 })
 
 ```

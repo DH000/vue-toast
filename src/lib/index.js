@@ -45,4 +45,7 @@ Toast.install = function (Vue, options) {
     });
 
 }
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(Toast);
+}
 export default Toast;
