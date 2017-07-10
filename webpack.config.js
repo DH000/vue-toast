@@ -1,13 +1,13 @@
+var webpack = require('webpack');
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
 module.exports = {
     entry:'./src/lib/index.js',
     output:{
         path:path.join(__dirname,'./dist'),
-        publicPath:'http://www.baidu.com',
-        filename:'vue-toast.js',
+        publicPath:'',
+        filename:'vue-toast-m.js',
         libraryTarget: "umd",
-        library: 'VueToast'
+        library: 'VueToastM'
     },
     module:{
         rules:[
@@ -28,13 +28,9 @@ module.exports = {
                 options:{
                     loaders:{
                         scss:'style-loader!css-loader!postcss-loader!sass-loader'
-                    },
-                    extractCSS: true
+                    }
                 }
             }
         ]
-    },
-    plugins: [
-        new ExtractTextPlugin("index.css")
-    ]
+    }
 }

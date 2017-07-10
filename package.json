@@ -18,13 +18,13 @@
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^2.1.2",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.6",
     "postcss-loader": "^2.0.6",
     "postcss-modules-local-by-default": "^1.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "vue-loader": "^13.0.0",
     "vue-template-compiler": "^2.3.4"
   }

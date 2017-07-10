@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -75,14 +75,25 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__toast_vue__ = __webpack_require__(1);
-/**
- * @desc a toast plugin for mobile
- */
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+                                                                                                                                                                                                                                                                               * @desc a toast plugin for mobile
+                                                                                                                                                                                                                                                                               */
+
+
+var _toast = __webpack_require__(1);
+
+var _toast2 = _interopRequireDefault(_toast);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Toast = {};
 Toast.install = function (Vue, options) {
@@ -95,9 +106,9 @@ Toast.install = function (Vue, options) {
     }
     Vue.prototype.$toast = function (message, option) {
 
-        let callback = '';
+        var callback = '';
         //设置局部配置
-        if (typeof option == 'object') {
+        if ((typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object') {
             for (var property in option) {
                 opt[property] = option[property];
             }
@@ -105,7 +116,7 @@ Toast.install = function (Vue, options) {
             callback = option;
         }
 
-        const ToastController = Vue.extend(__WEBPACK_IMPORTED_MODULE_0__toast_vue__["a" /* default */]);
+        var ToastController = Vue.extend(_toast2.default);
 
         var instance = new ToastController().$mount(document.createElement("div"));
         instance.message = message;
@@ -113,7 +124,7 @@ Toast.install = function (Vue, options) {
         document.body.appendChild(instance.$el);
         setTimeout(function () {
             instance.visible = false;
-            setTimeout(() => {
+            setTimeout(function () {
                 document.body.removeChild(instance.$el);
                 callback && callback();
             }, 500);
@@ -129,13 +140,14 @@ Toast.install = function (Vue, options) {
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(Toast);
 }
-/* harmony default export */ __webpack_exports__["default"] = (Toast);
+exports.default = Toast;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_13_0_0_vue_loader_lib_selector_type_script_index_0_toast_vue__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_13_0_0_vue_loader_lib_template_compiler_index_id_data_v_7030a265_node_modules_13_0_0_vue_loader_lib_selector_type_template_index_0_toast_vue__ = __webpack_require__(9);
 var disposed = false
@@ -181,7 +193,7 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -205,8 +217,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/.0.28.4@css-loader/index.js!../../node_modules/.13.0.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7030a265\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.6@sass-loader/lib/loader.js!../../node_modules/.13.0.0@vue-loader/lib/selector.js?type=styles&index=0!./toast.vue", function() {
-			var newContent = require("!!../../node_modules/.0.28.4@css-loader/index.js!../../node_modules/.13.0.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7030a265\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.6@sass-loader/lib/loader.js!../../node_modules/.13.0.0@vue-loader/lib/selector.js?type=styles&index=0!./toast.vue");
+		module.hot.accept("!!../../node_modules/.0.28.4@css-loader/index.js!../../node_modules/.13.0.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7030a265\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.2.0.6@postcss-loader/lib/index.js!../../node_modules/.6.0.6@sass-loader/lib/loader.js!../../node_modules/.13.0.0@vue-loader/lib/selector.js?type=styles&index=0!./toast.vue", function() {
+			var newContent = require("!!../../node_modules/.0.28.4@css-loader/index.js!../../node_modules/.13.0.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7030a265\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.2.0.6@postcss-loader/lib/index.js!../../node_modules/.6.0.6@sass-loader/lib/loader.js!../../node_modules/.13.0.0@vue-loader/lib/selector.js?type=styles&index=0!./toast.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -224,7 +236,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n@keyframes fade-in {\n0% {\n    opacity: 0;\n    transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    transform: scale(1);\n}\n}\n@keyframes fade-out {\n0% {\n    opacity: 1;\n    transform: scale(1);\n}\n100% {\n    opacity: 0;\n    transform: scale(0.7);\n}\n}\n.toastWrap {\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 5000 !important;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.toastWrap .fade-in {\n    animation-name: fade-in;\n    animation-duration: 0.3s;\n    animation-fill-mode: both;\n}\n.toastWrap .fade-out {\n    animation-name: fade-out;\n    animation-duration: 0.3s;\n    animation-fill-mode: both;\n}\n.toastWrap .toast {\n    width: 10rem;\n    height: 5.625rem;\n    position: relative;\n    background: rgba(0, 0, 0, 0.6);\n    border-radius: 13px;\n    overflow: hidden;\n    line-height: 5.625rem;\n    text-align: center;\n}\n.toastWrap .toast .icon {\n      font-size: 1.25rem;\n      color: #fff;\n}\n.toastWrap .toast p {\n      font-size: 0.9375rem;\n      color: #fff;\n}\n", ""]);
+exports.push([module.i, "\n@-webkit-keyframes fade-in {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fade-in {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@-webkit-keyframes fade-out {\n0% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n100% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n}\n@keyframes fade-out {\n0% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n100% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n}\n.toastWrap {\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 5000 !important;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.toastWrap .fade-in {\n    -webkit-animation-name: fade-in;\n            animation-name: fade-in;\n    -webkit-animation-duration: 0.3s;\n            animation-duration: 0.3s;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n.toastWrap .fade-out {\n    -webkit-animation-name: fade-out;\n            animation-name: fade-out;\n    -webkit-animation-duration: 0.3s;\n            animation-duration: 0.3s;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n.toastWrap .toast {\n    width: 10rem;\n    height: 5.625rem;\n    position: relative;\n    background: rgba(0, 0, 0, 0.6);\n    border-radius: 13px;\n    overflow: hidden;\n    line-height: 5.625rem;\n    text-align: center;\n}\n.toastWrap .toast .icon {\n      font-size: 1.25rem;\n      color: #fff;\n}\n.toastWrap .toast p {\n      font-size: 0.9375rem;\n      color: #fff;\n}\n", ""]);
 
 // exports
 
@@ -912,4 +924,3 @@ if (false) {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=vue-toast-m.js.map
