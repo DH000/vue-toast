@@ -1,8 +1,8 @@
 {
   "name": "vue-toast-m",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "",
-  "main": "index.js",
+  "main": "dist/vue-toast-m.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
