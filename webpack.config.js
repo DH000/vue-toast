@@ -1,51 +1,40 @@
 var path = require('path');
-var webpack = require('webpack');
-var projectRoot = path.resolve(__dirname, '../')
-
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 module.exports = {
-  entry: "./src/lib/index.js",
-  output: {
-    path: path.join(__dirname,"./dist"),
-    publicPath: "/dist/",
-    filename: "vue-toast-m.js"
-  },
-  resolve: {
-      extensions: ['.js', '.vue', '.css']
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options:{
-          loaders:{
-            scss: 'vue-style-loader!css-loader!sass-loader',
-          }
-        }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: projectRoot,
-        exclude: /node_modules/
-      }
+    entry:'./src/lib/index.js',
+    output:{
+        path:path.join(__dirname,'./dist'),
+        publicPath:'http://www.baidu.com',
+        filename:'vue-toast.js',
+        libraryTarget: "umd",
+        library: 'VueToast'
+    },
+    module:{
+        rules:[
+            {
+               test:/\.js$/,
+               loader:'babel-loader',
+               include:path.join(__dirname,'src'),
+               exclude:/node_modules/,
+               query:{
+                   presets:['env']
+               }
+            },
+            {
+                test:/\.vue$/,
+                loader:'vue-loader',
+                include:path.join(__dirname,'src'),
+                exclude:/node_modules/,
+                options:{
+                    loaders:{
+                        scss:'style-loader!css-loader!postcss-loader!sass-loader'
+                    },
+                    extractCSS: true
+                }
+            }
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin("index.css")
     ]
-  },
-  plugins:[
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: '"production"'
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        compress: {
-          warnings: false
-        }
-      }),
-      new webpack.LoaderOptionsPlugin({
-        minimize: true
-      })
-  ],
-  devtool:"#source-map"
 }
