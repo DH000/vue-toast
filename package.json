@@ -1,6 +1,6 @@
 {
   "name": "vue-toast-m",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "",
   "main": "dist/vue-toast-m.js",
   "scripts": {
