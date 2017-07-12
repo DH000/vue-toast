@@ -6,16 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "JackBean",
-  "license": "MIT",
-  "repository":{
-    "type" : "git",
-    "url" : "https://github.com/JackySoft/vue-toast.git"
-  }
-  "bugs":{
-      "url":"https://github.com/JackySoft/vue-toast/issues",
-      "email":"sunnyboysoft@163.com"
-  },
   "dependencies": {
     "vue": "^2.3.4",
     "webpack": "^3.1.0"
@@ -35,5 +25,22 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "vue-loader": "^13.0.0",
     "vue-template-compiler": "^2.3.4"
-  }
+  },
+  "repository":{
+    "type" : "git",
+    "url" : "https://github.com/JackySoft/vue-toast.git"
+  },
+  "keywords": [
+    "vuejs",
+    "vue",
+    "vue-component",
+    "component"
+  ],
+  "author": "JackBean",
+  "license": "MIT",
+  "bugs":{
+      "url":"https://github.com/JackySoft/vue-toast/issues",
+      "email":"sunnyboysoft@163.com"
+  },
+  "homepage": "https://github.com/JackySoft/vue-toast#readme"
 }
